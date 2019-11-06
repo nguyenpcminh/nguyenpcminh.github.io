@@ -21,6 +21,10 @@
         overflow: hidden;
         transform: translate(-50%,-50%) scale(.3);
         transition: all .4s .2s;
+
+        @include respond(phone){
+            width: 90%;
+        }
     }
     &__left {
         width: 33%;

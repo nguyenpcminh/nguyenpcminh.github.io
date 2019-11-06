@@ -498,6 +498,9 @@ body {
     overflow: hidden;
     transform: translate(-50%, -50%) scale(0.3);
     transition: all .4s .2s; }
+    @media (max-width: 37.5em) {
+      .popup__content {
+        width: 90%; } }
   .popup__left {
     width: 33%;
     display: table-cell; }
