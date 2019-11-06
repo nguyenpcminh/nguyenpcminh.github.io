@@ -1,0 +1,95 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 1.5rem 3rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    transform: skewX(-12deg);
+
+    @include respond(tab-port){
+        padding: 4rem;
+        padding-left: 7rem;
+        width: 100%;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+        -webkit-transform: skewX(0);
+        -moz-transform: skewX(0);
+        -ms-transform: skewX(0);
+        -o-transform: skewX(0);
+    }
+
+    &__shape {
+        width: 14rem;
+        height: 14rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: skewX(12deg) translateX(-2rem);
+        position: relative;
+
+        @include respond(phone) {
+            transform: skewX(0) translateX(-2rem);
+            -webkit-transform: skewX(0) translateX(-2rem);
+            -moz-transform: skewX(0) translateX(-2rem);
+            -ms-transform: skewX(0) translateX(-2rem);
+            -o-transform: skewX(0) translateX(-2rem);
+}
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+            -webkit-transform: skewX(0);
+            -moz-transform: skewX(0);
+            -ms-transform: skewX(0);
+            -o-transform: skewX(0);
+        }
+
+
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-3rem) scale(1.4);
+        transition: all .5s;
+
+        @include respond(tab-port){
+           transform: translateX(-3rem) scale(1.2);
+           -webkit-transform: translateX(-3rem) scale(1.2);
+           -moz-transform: translateX(-3rem) scale(1.2);
+           -ms-transform: translateX(-3rem) scale(1.2);
+           -o-transform: translateX(-3rem) scale(1.2);
+}
+    }
+
+    &__caption {
+        font-size: 1.7rem;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        transition: all .4s;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-3rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}
