@@ -22,7 +22,7 @@
         transform: translate(-50%,-50%) scale(.3);
         transition: all .4s .2s;
 
-        @include respond(phone){
+        @include respond(tab-port){
             width: 90%;
         }
     }
